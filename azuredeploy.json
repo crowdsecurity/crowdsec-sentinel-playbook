@@ -309,10 +309,13 @@
                     },
                     "outputs": {},
                     "parameters": {
-                        
                         "CrowdSec API Key": {
                             "defaultValue": "N/A",
                             "type": "SecureString"
+                        },
+                        "initialDelayInSeconds": {
+                            "defaultValue": 120,
+                            "type": "Int"
                         },
                         "$connections": {
                             "type": "Object",
