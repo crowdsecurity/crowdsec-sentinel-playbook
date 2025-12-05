@@ -47,12 +47,9 @@
         "sentinelManagedApiId": "[concat(subscription().id, '/providers/Microsoft.Web/locations/', parameters('location'), '/managedApis/azuresentinel')]"
     },
     "resources": [
-        
-        
-        
         {
             "type": "Microsoft.Web/connections",
-            "apiVersion": "2018-07-01b",
+            "apiVersion": "2018-07-01-preview",
             "name": "[parameters('sentinelConnectionName')]",
             "location": "[parameters('location')]",
             "properties": {
@@ -61,20 +58,12 @@
                     "id": "[variables('sentinelManagedApiId')]"
                 },
                 "displayName": "Azure Sentinel Connection",
-                "nonSecretParameterValues": {},
-                "connectionProperties": {
-                    "authentication": {
-                        "type": "ManagedServiceIdentity"
-                    }
-                }
+                "nonSecretParameterValues": {}
             }
         },
-        
-        
-        
         {
             "type": "Microsoft.Logic/workflows",
-            "apiVersion": "2016-06-01", 
+            "apiVersion": "2018-07-01-preview", 
             "name": "[parameters('logicAppName')]",
             "location": "[parameters('location')]",
             "dependsOn": [
@@ -345,9 +334,10 @@
                             "defaultValue": {
                                 
                                 "azuresentinel": {
-                                    "connectionId": "REPLACE_WITH_CONNECTION_ID",
-                                    "connectionName": "REPLACE_WITH_CONNECTION_NAME",
-                                    "id": "REPLACE_WITH_API_ID"
+
+                                    "connectionId": "[resourceId('Microsoft.Web/connections', parameters('sentinelConnectionName'))]",
+                                    "connectionName": "[parameters('sentinelConnectionName')]",
+                                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/azuresentinel')]"
                                 }
                             }
                         }
@@ -355,7 +345,6 @@
                 },
                 
                 "parameters": {
-                    
                     "CrowdSec API Key": {
                         "value": "[parameters('crowdSecApiKey')]"
                     },
