@@ -355,7 +355,14 @@
                         },
                         "$connections": {
                             "type": "Object",
-                            "defaultValue": {}
+                            "defaultValue": {
+                                // FIX: Provide the expected structure for the connection reference
+                                "azuresentinel": {
+                                    "connectionId": "REPLACE_WITH_CONNECTION_ID",
+                                    "connectionName": "REPLACE_WITH_CONNECTION_NAME",
+                                    "id": "REPLACE_WITH_API_ID"
+                                }
+                            }
                         }
                     }
                 },
