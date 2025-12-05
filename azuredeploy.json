@@ -69,12 +69,7 @@
             "name": "[parameters('sentinelConnectionName')]",
             "location": "[parameters('location')]",
             "properties": {
-                // FIX: Added 'api' object inside connectionParameters for compatibility
-                "connectionParameters": {
-                    "api": {
-                        "id": "[variables('sentinelManagedApiId')]"
-                    }
-                },
+                // FIX: Removed unnecessary 'connectionParameters' object when using MSI
                 "api": {
                     "id": "[variables('sentinelManagedApiId')]"
                 },
