@@ -55,6 +55,9 @@
                 
                 "[resourceId('Microsoft.Web/connections', parameters('sentinelConnectionName'))]"
             ],
+            "identity": {
+                "type": "SystemAssigned"
+            },
             "properties": {
                 
                 "definition": {
