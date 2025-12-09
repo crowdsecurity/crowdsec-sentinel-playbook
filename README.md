@@ -17,7 +17,7 @@
 
 # Example Usage
 
-In our example, we are goint to create an **Analytics Rule** to trigger on successful EntraID authentications, and use an **Autmation Rule** to trigger our **Logic App**.
+In our example, we are going to create an **Analytics Rule** to trigger on successful EntraID authentications, and use an **Automation Rule** to trigger our **Logic App**.
 
 Our **Logic App** will exploit CrowdSec's CTI to create an **Alert** if the authentication came from a malicious or suspicious IP.
 
