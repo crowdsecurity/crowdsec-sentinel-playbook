@@ -330,12 +330,11 @@
         }
     },
     "parameters": {
-        "CrowdSec API Key": {},
         "$connections": {
             "type": "Object",
             "value": {
                 "azuresentinel": {
-                    "id": "/subscriptions/<SUBSCRIPTION_ID>/providers/Microsoft.Web/locations/francecentral/managedApis/azuresentinel",
+                    "id": "/subscriptions/@{subscription().subscriptionId}/providers/Microsoft.Web/locations/francecentral/managedApis/azuresentinel",
                     "connectionId": "/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/sentinel-test/providers/Microsoft.Web/connections/azuresentinel-test-playbook",
                     "connectionName": "azuresentinel-test-playbook",
                     "connectionProperties": {
