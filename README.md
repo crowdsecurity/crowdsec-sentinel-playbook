@@ -2,11 +2,11 @@
 
 # Alert Example
 
-[!Example Alert](/img/alert.png)
+![Example Alert](/img/alert.png)
 
 # Deployment
 
-[!Deploy](/img/setup.png)
+![Deploy](/img/setup.png)
 
 ## Permissions
 
@@ -24,11 +24,11 @@ Our **Logic App** will exploit CrowdSec's CTI to create an **Alert** if the auth
 
 1. Create Analytics Rule
 
-[!Analytics Rule Creation](/img/analytics-rule.png)
+![Analytics Rule Creation](/img/analytics-rule.png)
 
 2. Create Automation Rule
 
-[!Automation Rule Creation](/img/automation-rule.png)
+![Automation Rule Creation](/img/automation-rule.png)
 
 3. Test it
 
