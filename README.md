@@ -1,14 +1,36 @@
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbuixor%2Fcrowdsec-sentinel-playbook%2Frefs%2Fheads%2Fmain%2Fazuredeploy.json)
 
+# Alert Example
 
+[!Example Alert](/img/alert.png)
 
-## Deployment
+# Deployment
 
- - Deploy
- - Give "Microsoft Sentinel Contributor" roles to the Logic App via IAM
- 
+[!Deploy](/img/setup.png)
+
+## Permissions
+
+ - In the resource group, via IAM, grant:
+    - "Microsoft Sentinel Contributor" role to the Logic App
+    - "Microsoft Sentinel Automation Contributor" role to "Azure Security Insights"
  - Allow Azure Sentinel API Connection (General -> Edit API Connection)
- - Give "Microsoft Sentinel Automation Contributor" to "Azure Security Insights" 
- - Give "Logic App Contributor" to "Azure Security Insights"
 
+# Example Usage
+
+In our example, we are goint to create an **Analytics Rule** to trigger on successful EntraID authentications, and use an **Autmation Rule** to trigger our **Logic App**.
+
+Our **Logic App** will exploit CrowdSec's CTI to create an **Alert** if the authentication came from a malicious or suspicious IP.
+
+
+1. Create Analytics Rule
+
+[!Analytics Rule Creation](/img/analytics-rule.png)
+
+2. Create Automation Rule
+
+[!Automation Rule Creation](/img/automation-rule.png)
+
+3. Test it
+
+Try to connection from ie. Tor IP Address, wait for your analytics rule to trigger and watch the alerts appear.
 
